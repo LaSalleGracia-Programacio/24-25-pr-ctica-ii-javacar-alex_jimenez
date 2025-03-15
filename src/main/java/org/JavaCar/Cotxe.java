@@ -10,6 +10,6 @@ public class Cotxe extends Vehicle {
     
     @Override
     public double calcularPrecio(int numDies){
-        return getPreuBase() * numDies;
+        return getPreuBase() * numDies + nombrePlaces * 10;
     }
 }
