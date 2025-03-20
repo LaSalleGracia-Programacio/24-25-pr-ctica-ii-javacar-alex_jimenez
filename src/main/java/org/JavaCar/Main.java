@@ -1,7 +1,37 @@
 package org.JavaCar;
 
+import java.util.List;              //Importamos la clase List
+import java.util.ArrayList;         //Importamos la clase ArrayList
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        //Creamos los vehiculos Coche, Moto y Furgoneta con los motores y ruedas
+        Motor motorCoche = new Motor("Gasolina", 100);
+        Roda rodesCoche = new Roda("Michelin", 17);
+
+        Motor motorMoto = new Motor("Gasolina", 80);
+        Roda rodesMoto = new Roda("Pirelli",14);
+
+        Motor motorFurgoneta = new Motor("Gasolina", 120);
+        Roda rodesFurgoneta = new Roda("Michelin", 17);
+        
+        //Creamos las instancias de los vehiculos
+        Cotxe cotxe = new Cotxe("1234ABCD", "Toyota", "Corolla", 10000, motorCoche, rodesCoche, "ECO", 5);
+        Moto moto = new Moto("2341FGDE", "Honda", "CBR1000RR", 15000, motorMoto, rodesMoto, "ECO", 1000);
+        Furgoneta furgoneta = new Furgoneta("3456HIJK", "Mercedes", "Sprinter", 20000, motorFurgoneta, rodesFurgoneta, "ECO", 1000);
+
+        //Creamos la lista de vehiculos
+        List<Vehicle> vehicles = new ArrayList<>();
+        vehicles.add(cotxe);
+        vehicles.add(moto);
+        vehicles.add(furgoneta);
+
+        //Calculamos los ingresos totales de los vehiculos
+        double ingresosTotals = GestorLlogers.calcularIngressosTotals(vehicles, 7);
+        System.out.println("Los ingresos totales de los vehiculos por 7 dias son: " + ingresosTotals + " €");
+
+        //Filtramos los vehiculos por precio
+        List<Vehicle> vehiclesFiltrats = GestorLlogers.filtrarPerPreu(vehicles, 10000);
+        System.out.println("Los vehiculos filtrados por precio son: " + vehiclesFiltrats);
     }
 }
