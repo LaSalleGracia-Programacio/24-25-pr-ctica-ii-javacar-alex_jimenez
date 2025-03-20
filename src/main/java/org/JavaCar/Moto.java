@@ -16,4 +16,16 @@ public class Moto extends Vehicle {
         }
         return preu;
     }
+
+    //Metodo ToString de la clase Moto
+    @Override
+    public String toString() {
+    return "Moto{" +
+            "matricula = '" + getMatricula() + '\'' +
+            ", marca = '" + getMarca() + '\'' +
+            ", model = '" + getModel() + '\'' +
+            ", preuBase = " + getPreuBase() +
+            ", cilindrada = " + cilindrada +
+            '}';
+    }
 }
