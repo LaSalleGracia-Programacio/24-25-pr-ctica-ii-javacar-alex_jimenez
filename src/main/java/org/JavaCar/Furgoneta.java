@@ -17,4 +17,16 @@ public class Furgoneta extends Vehicle implements Llogable {
         }
         return preu;
     }
+
+    //Metodo ToString de la clase Furgoneta
+    @Override
+    public String toString() {
+    return "Furgoneta{" +
+            "matricula = '" + getMatricula() + '\'' +
+            ", marca = '" + getMarca() + '\'' +
+            ", model = '" + getModel() + '\'' +
+            ", preuBase = " + getPreuBase() +
+            ", capacitatCarga = " + capacitatCarga +
+        '}';
+    }
 }
