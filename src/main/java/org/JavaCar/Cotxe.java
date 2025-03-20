@@ -1,6 +1,7 @@
 package org.JavaCar;
 
-public class Cotxe extends Vehicle {
+//Clase que hereda de Vehicle y implementa Llogable
+public class Cotxe extends Vehicle implements Llogable {
     private int nombrePlaces;
 
     public Cotxe(String matricula, String marca, String model, double preuBase, Motor motor, Roda rodes, String etiquetaAmbiental, int nombrePlaces){
@@ -9,7 +10,7 @@ public class Cotxe extends Vehicle {
     }
     
     @Override
-    public double calcularPrecio(int numDies){
-        return getPreuBase() * numDies + nombrePlaces * 10;
+    public double calcularPrecio(int dies){
+        return getPreuBase() * dies;
     }
 }
