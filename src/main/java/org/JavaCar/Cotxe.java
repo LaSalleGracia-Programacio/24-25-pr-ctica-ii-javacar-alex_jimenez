@@ -13,4 +13,16 @@ public class Cotxe extends Vehicle implements Llogable {
     public double calcularPrecio(int dies){
         return getPreuBase() * dies;
     }
+
+    //Metodo ToString de la clase Cotxe
+    @Override
+    public String toString() {
+    return "Cotxe{" +
+            " matricula = '" + getMatricula() + '\'' +
+            ", marca = '" + getMarca() + '\'' +
+            ", model = '" + getModel() + '\'' +
+            ", preuBase = " + getPreuBase() +
+            ", nombrePlaces = " + nombrePlaces +
+            '}';
+    }
 }
