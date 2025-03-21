@@ -2,9 +2,9 @@ package org.JavaCar;
 
 //Clase Abstracta Vehicle que implementa Llogable
 public abstract class Vehicle implements Llogable{
-    private String matricula;
-    private String marca;
-    private String model;
+    protected String matricula;
+    protected String marca;
+    protected String model;
     private double preuBase;
     private Motor motor;
     private Roda rodes;
