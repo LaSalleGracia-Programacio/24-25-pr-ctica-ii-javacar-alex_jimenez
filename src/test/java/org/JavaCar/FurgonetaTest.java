@@ -9,7 +9,7 @@ public class FurgonetaTest {
 
     @Test
     public void testCreacioFurgoneta() {
-        Furgoneta furgoneta = new Furgoneta("1122JKL", "Ford", "Transit", 40, 800, null, null);
+        Furgoneta furgoneta = new Furgoneta("1122JKL", "Ford", "Transit", 40, 800, null, null, "ECO");
         
         assertEquals("1122JKL", furgoneta.getMatricula());
         assertEquals("Ford", furgoneta.getMarca());
@@ -20,20 +20,20 @@ public class FurgonetaTest {
 
     @Test
     public void testCalculPreuFurgonetaPetita() {
-        Furgoneta furgoneta = new Furgoneta("3344MNO", "Mercedes", "Vito", 50, 900, null, null);
-        assertEquals(150, furgoneta.calcularPreu(3), 0.01); // 50 * 3 = 150
+        Furgoneta furgoneta = new Furgoneta("3344MNO", "Mercedes", "Vito", 50, 900, null, null, "ECO");
+        assertEquals(150, furgoneta.calcularPrecio(3), 0.01); // 50 * 3 = 150
     }
 
     @Test
     public void testCalculPreuFurgonetaGran() {
-        Furgoneta furgoneta = new Furgoneta("5566PQR", "Iveco", "Daily", 55, 1200, null, null);
-        assertEquals(195, furgoneta.calcularPreu(3), 0.01); // 55 * 3 + 10 * 3 = 195
+        Furgoneta furgoneta = new Furgoneta("5566PQR", "Iveco", "Daily", 55, 1200, null, null, "ECO");
+        assertEquals(195, furgoneta.calcularPrecio(3), 0.01); // 55 * 3 + 10 * 3 = 195
     }
 
     @Test
     public void testAtributPrivat() throws NoSuchFieldException {
         // Reflexió per accedir als atributs i verificar que són privats
-        Field capacitatCargaField = Moto.class.getDeclaredField("cilindrada");
+        Field capacitatCargaField = Furgoneta.class.getDeclaredField("capacitatCarga");
 
 
         assertTrue("L'atribut 'capacitatCarga' hauria de ser privat", 
