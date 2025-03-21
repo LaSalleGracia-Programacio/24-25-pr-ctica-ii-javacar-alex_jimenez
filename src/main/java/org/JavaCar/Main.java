@@ -28,10 +28,10 @@ public class Main {
 
         //Calculamos los ingresos totales de los vehiculos
         double ingresosTotals = GestorLlogers.calcularIngressosTotals(vehicles, 7);
-        System.out.println("Los ingresos totales de los vehiculos por 7 dias son: " + ingresosTotals + " €");
+        System.out.println("\nLos ingresos totales de los vehiculos por 7 dias son: " + ingresosTotals + " €");
 
         //Filtramos los vehiculos por precio
         List<Vehicle> vehiclesFiltrats = GestorLlogers.filtrarPerPreu(vehicles, 10000);
-        System.out.println("Los vehiculos filtrados por precio son: " + vehiclesFiltrats);
+        System.out.println("\nLos vehiculos filtrados por precio son: " + vehiclesFiltrats + "\n");
     }
 }
