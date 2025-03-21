@@ -11,12 +11,12 @@ public class VehicleTest {
     
     @Test
     public void testCreacioVehicleSenseMotorIRodes() {
-        Vehicle vehicle = new Cotxe("5678DEF", "Ford", "Focus", 28, 5, null, null);
+        Vehicle vehicle = new Cotxe("5678DEF", "Ford", "Focus", 28.0, null, null, "ECO", 5);
 
         assertEquals("5678DEF", vehicle.getMatricula());
         assertEquals("Ford", vehicle.getMarca());
         assertEquals("Focus", vehicle.getModel());
-        assertEquals(28, vehicle.getPreuBase(), 0.01);
+        assertEquals(28.0, vehicle.getPreuBase(), 0.01);
         assertNull(vehicle.getMotor());
         assertNull(vehicle.getRodes());
     }
@@ -24,21 +24,21 @@ public class VehicleTest {
     @Test
     public void testCreacioVehicleAmbMotorIRodes() {
         Motor motor = new Motor("Gasolina", 120);
-        Roda[] rodes = {new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17), new Roda("Michelin", 17)};
-        Vehicle vehicle = new Cotxe("1234ABC", "Toyota", "Corolla", 30, 5, motor, rodes);
+        Roda roda = new Roda("Michelin", 17);
+        Vehicle vehicle = new Cotxe("1234ABC", "Toyota", "Corolla", 30.0, motor, roda, "ECO", 5);
 
         assertEquals("1234ABC", vehicle.getMatricula());
         assertEquals("Toyota", vehicle.getMarca());
         assertEquals("Corolla", vehicle.getModel());
-        assertEquals(30, vehicle.getPreuBase(), 0.01);
+        assertEquals(30.0, vehicle.getPreuBase(), 0.01);
         assertEquals(motor, vehicle.getMotor());
-        assertArrayEquals(rodes, vehicle.getRodes());
+        assertEquals(roda, vehicle.getRodes());
     }
 
     @Test
     public void testProvaUsVehicle() {
-        Vehicle vehicle = new Cotxe("2222XYZ", "Renault", "Clio", 32, 5, null, null);
-        double preuLloguer = vehicle.calcularPreu(3); // Ha d'usar la implementació de Cotxe
+        Vehicle vehicle = new Cotxe("2222XYZ", "Renault", "Clio", 32.0, null, null, "ECO", 5);
+        double preuLloguer = vehicle.calcularPrecio(3); // Ha d'usar la implementació de Cotxe
 
         assertEquals(96, preuLloguer, 0.01);
     }
@@ -62,7 +62,6 @@ public class VehicleTest {
         Field matriculaField = Vehicle.class.getDeclaredField("matricula");
         Field marcaField = Vehicle.class.getDeclaredField("marca");
         Field modelField = Vehicle.class.getDeclaredField("model");
-
 
         assertTrue("L'atribut 'matricula' hauria de ser protected", 
                    java.lang.reflect.Modifier.isProtected(matriculaField.getModifiers()));
