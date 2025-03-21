@@ -18,7 +18,7 @@ public class Main {
         //Creamos las instancias de los vehiculos
         Cotxe cotxe = new Cotxe("1234ABCD", "Toyota", "Corolla", 10000, motorCoche, rodesCoche, "ECO", 5);
         Moto moto = new Moto("2341FGDE", "Honda", "CBR1000RR", 15000, motorMoto, rodesMoto, "ECO", 1000);
-        Furgoneta furgoneta = new Furgoneta("3456HIJK", "Mercedes", "Sprinter", 20000, motorFurgoneta, rodesFurgoneta, "ECO", 1000);
+        Furgoneta furgoneta = new Furgoneta("3456HIJK", "Mercedes", "Sprinter", 20000, 1000, motorFurgoneta, rodesFurgoneta, "ECO");
 
         //Creamos la lista de vehiculos
         List<Vehicle> vehicles = new ArrayList<>();
