@@ -1,7 +1,7 @@
 package org.JavaCar;
 
 //Clase Furgoneta heredada de vehicle que implemnta la interfaz llogable
-public class Furgoneta extends Vehicle implements Llogable {
+public class Furgoneta extends Vehicle{
     private int capacitatCarga;
 
     //Constructor de la clase Furgoneta

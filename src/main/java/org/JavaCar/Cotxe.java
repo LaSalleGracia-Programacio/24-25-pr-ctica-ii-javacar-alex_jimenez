@@ -1,7 +1,7 @@
 package org.JavaCar;
 
 //Clase que hereda de Vehicle y implementa Llogable
-public class Cotxe extends Vehicle implements Llogable {
+public class Cotxe extends Vehicle {
     private int nombrePlaces;
 
     //Constructor de la clase Cotxe

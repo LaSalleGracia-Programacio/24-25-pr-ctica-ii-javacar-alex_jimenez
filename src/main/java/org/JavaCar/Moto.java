@@ -1,6 +1,6 @@
 package org.JavaCar;
 
-public class Moto extends Vehicle implements Llogable {
+public class Moto extends Vehicle {
     private int cilindrada;
 
     //Constructor de la clase Moto
